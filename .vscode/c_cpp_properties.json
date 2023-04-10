@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/opt/ros/humble/include/**",
+                "/home/koke/mine/ros2_ws/rabbit2023/rabbit2023_ws/src/can_plugins2/include/**",
+                "/home/koke/mine/ros2_ws/rabbit2023/rabbit2023_ws/src/rabbit2023/include/**",
+                "/usr/include/**",
+                "/../../build/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
+}
