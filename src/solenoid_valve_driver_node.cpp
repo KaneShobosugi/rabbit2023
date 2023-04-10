@@ -17,21 +17,20 @@ namespace solenoid_valve_driver_node
     private:
         std::array<bool, MAX_PORT_PCS> is_on{};
 
-
     public:
-        sub_ = this->create_subscription<>;
-        can_pub_ = this->create_publisher<can_plugins2::msg::Frame>("can_tx", 10);
+        rclcpp::Subscription<rabbit2023::msg::ToSolenoidValve>::SharedPtr sub_;
+        rclcpp::Publisher<can_plugins2::msg::Frame>::SharedPtr can_pub_;
 
     public:
         Solenoid_valve_driver_node(const rclcpp::NodeOptions &options) : Node("solenoid_valve_driver_node", options)
         {
-            // RCLCPP_INFO(this->get_logger(), "Solenoid_valve_driver_node started.");
-
-
+            sub_ = this->create_subscription<rabbit2023::msg::ToSolenoidValve>("to_solenoid_valve", 10, std::bind(&Solenoid_valve_driver_node::callback, this,std::placeholders::_1));
+            can_pub_ = this->create_publisher<can_plugins2::msg::Frame>("can_tx", 10);
+            RCLCPP_INFO(this->get_logger(), "Solenoid_valve_driver_node started.");
         }
 
     private:
-        void callback(const rabbit2023::){
+        void callback(const rabbit2023::msg::ToSolenoidValve){
 
         };
     };

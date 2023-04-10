@@ -10,7 +10,9 @@
                 "/home/koke/mine/ros2_ws/rabbit2023/rabbit2023_ws/src/can_plugins2/include/**",
                 "/home/koke/mine/ros2_ws/rabbit2023/rabbit2023_ws/src/rabbit2023/include/**",
                 "/usr/include/**",
-                "/../../build/**"
+                "../../build/**",
+                // "/home/koke/mine/ros2_ws/rabbit2023/rabbit2023_ws/build/rabbit2023/rosidl_generator_cpp/**"
+                "../can_plugins2/include/**"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
