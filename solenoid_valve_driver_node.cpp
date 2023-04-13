@@ -5,7 +5,7 @@
 #include "can_plugins2/msg/frame.hpp"
 #include "can_utils.hpp"
 
-#include "rabbit2023/solenoid_valve_driver_node.hpp"
+#include "include/solenoid_valve_driver_node.hpp"
 #include "rabbit2023/msg/to_solenoid_valve.hpp"
 
 #define MAX_PORT_PCS 10

@@ -40,10 +40,10 @@ endif()
 # find_package(<dependency> REQUIRED)
 
 add_library(solenoid_valve_driver_node SHARED
-  src/solenoid_valve_driver_node.cpp
+  solenoid_valve_driver_node.cpp
 )
 add_library(equipment_teleop_node SHARED
-  src/equipment_teleop_node.cpp
+  equipment_teleop_node.cpp
 )
 
 
@@ -51,11 +51,10 @@ add_library(equipment_teleop_node SHARED
 
  # check if ROS_DISTRO is foxy or humbles
 # if($ENV{ROS_DISTRO} STREQUAL "humble")
-  target_link_libraries(
-    solenoid_valve_driver_node
-    equipment_teleop_node
-    
-    "${cpp_typesupport_target}")
+target_link_libraries(
+  solenoid_valve_driver_node  "${cpp_typesupport_target}")
+target_link_libraries(
+  equipment_teleop_node "${cpp_typesupport_target}")
 # elseif($ENV{ROS_DISTRO} STREQUAL "foxy")
 #   rosidl_target_interfaces(
 #     solenoid_valve_driver_node

@@ -12,6 +12,6 @@ namespace switch_feature
         body_lift,
         body_expansion,
 
-    }
+    };
 
 };

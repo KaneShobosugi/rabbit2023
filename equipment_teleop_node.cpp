@@ -68,7 +68,7 @@ namespace equipment_teleop_node
 
     private:
         // std::array<bool, BUTTON_PCS> button_input_cur{};
-        bool button_input_check(auto &msg, auto &button_input_pre, const auto &button_id)
+        bool button_input_check(const sensor_msgs::msg::Joy::ConstSharedPtr &msg, std::array<bool, BUTTON_PCS> &button_input_pre, const uint8_t &button_id)
         {
             if (button_input_pre[button_id] != msg->axes[button_id])
             {
@@ -77,7 +77,7 @@ namespace equipment_teleop_node
             }
             return false;
         };
-        void command_proc(auto const &sw_no, auto &command)
+        void command_proc(const uint8_t &sw_no, rabbit2023::msg::SwitchFeatures &command)
         {
             feature_state[sw_no] = !feature_state[sw_no];
             command.feature_no = sw_no;
