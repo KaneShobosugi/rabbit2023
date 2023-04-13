@@ -1,10 +1,10 @@
 // KaneShobosugi
 
-#include <rclcpp.hpp>
+#include <rclcpp/rclcpp.hpp>
 
 namespace switch_feature
 {
-    enum : uint8t
+    enum : uint8_t
     {
         wheel_lift_front,
         wheel_lift_middle,
@@ -14,4 +14,4 @@ namespace switch_feature
 
     }
 
-}
+};
