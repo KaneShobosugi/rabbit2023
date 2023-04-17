@@ -11,6 +11,7 @@ namespace switch_feature
         wheel_lift_rear,
         body_lift,
         body_expansion,
+        jump,
 
     };
 

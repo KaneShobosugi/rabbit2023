@@ -110,6 +110,11 @@ namespace equipment_teleop_node
                 command_proc(switch_feature::body_lift, command);
                 sf_pub_->publish(command);
             }
+            if (button_input_check(msg, button_input_pre, button_map::A))
+            {
+                command_proc(switch_feature::jump, command);
+                sf_pub_->publish(command);
+            }
         };
     };
 }
