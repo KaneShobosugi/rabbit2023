@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/koke/mine/ros2_ws/rabbit2023/rabbit2023_ws/install/rabbit2023/local/lib/python3.10/dist-packages",
+        "/home/koke/mine/ros2_ws/rabbit2023/rabbit2023_ws/install/can_plugins2/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/koke/mine/ros2_ws/rabbit2023/rabbit2023_ws/install/rabbit2023/local/lib/python3.10/dist-packages",
+        "/home/koke/mine/ros2_ws/rabbit2023/rabbit2023_ws/install/can_plugins2/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
