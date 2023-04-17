@@ -45,16 +45,19 @@ add_library(solenoid_valve_driver_node SHARED
 add_library(equipment_teleop_node SHARED
   equipment_teleop_node.cpp
 )
+add_library(equipment_core_node SHARED
+  equipment_core_node.cpp
+)
 
 
 
 
  # check if ROS_DISTRO is foxy or humbles
 # if($ENV{ROS_DISTRO} STREQUAL "humble")
-target_link_libraries(
-  solenoid_valve_driver_node  "${cpp_typesupport_target}")
-target_link_libraries(
-  equipment_teleop_node "${cpp_typesupport_target}")
+target_link_libraries(solenoid_valve_driver_node  "${cpp_typesupport_target}")
+target_link_libraries(equipment_teleop_node "${cpp_typesupport_target}")
+target_link_libraries(equipment_core_node "${cpp_typesupport_target}")
+  
 # elseif($ENV{ROS_DISTRO} STREQUAL "foxy")
 #   rosidl_target_interfaces(
 #     solenoid_valve_driver_node
@@ -78,15 +81,32 @@ ament_target_dependencies(equipment_teleop_node
   sensor_msgs
   can_plugins2
 )
+ament_target_dependencies(equipment_core_node
+  rclcpp
+  rclcpp_components
+  std_msgs
+  sensor_msgs
+  can_plugins2
+)
 
 rclcpp_components_register_nodes(
   solenoid_valve_driver_node "solenoid_valve_driver_node::Solenoid_valve_driver_node"
+)
+rclcpp_components_register_nodes(
   equipment_teleop_node "equipment_teleop_node::Equipment_teleop_node"
 )
+rclcpp_components_register_nodes(
+  equipment_core_node "equipment_core_node::Equipment_core_node"
+)
 
-install(TARGETS solenoid_valve_driver_node equipment_teleop_node
+
+install(TARGETS solenoid_valve_driver_node equipment_teleop_node equipment_core_node 
   DESTINATION lib
 )
+# install(TARGETS  equipment_teleop_node
+#   DESTINATION lib
+# )
+
 
 # if(BUILD_TESTING)
 #   find_package(ament_lint_auto REQUIRED)
