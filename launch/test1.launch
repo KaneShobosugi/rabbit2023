@@ -9,8 +9,8 @@
         </composable_node>
         <composable_node pkg="rabbit2023" plugin="equipment_teleop_node::Equipment_teleop_node" name="equipment_teleop_node"> 
         </composable_node>
-        <!-- <composable_node pkg="rabbit2023" plugin="equipment_core_node::Equipment_core_node" name="equipment_core_node">  -->
-        <!-- </composable_node> -->
+        <composable_node pkg="rabbit2023" plugin="equipment_core_node::Equipment_core_node" name="equipment_core_node"> 
+        </composable_node>
 
 
     </load_composable_node>
