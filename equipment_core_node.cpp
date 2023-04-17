@@ -71,6 +71,12 @@ namespace equipment_core_node
                 sv_pub_->publish(frame);
                 // assistance by wheels
             }
+            if (feature_no == switch_feature::jump)
+            {
+                frame.port_no = feature_no;
+                frame.is_on = is_on;
+                sv_pub_->publish(frame);
+            }
         };
     };
 }
