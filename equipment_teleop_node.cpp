@@ -85,7 +85,7 @@ namespace equipment_teleop_node
         };
         std::array<bool, BUTTON_PCS> button_input_pre{};
 
-        std::array<bool, 5> feature_state{};
+        std::array<bool, 100> feature_state{};
 
         void callback(const sensor_msgs::msg::Joy::ConstSharedPtr msg)
         {

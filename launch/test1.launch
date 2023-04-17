@@ -2,6 +2,9 @@
     <node pkg="rclcpp_components" exec="component_container" name="test1">
     </node>
     <load_composable_node target="test1">
+        <composable_node pkg="can_plugins2" plugin="slcan_bridge::SlcanBridge" name="slcan_bridge">
+        </composable_node>
+
         <composable_node pkg="rabbit2023" plugin="solenoid_valve_driver_node::Solenoid_valve_driver_node" name="solenoid_valve_driver_node"> 
         </composable_node>
         <composable_node pkg="rabbit2023" plugin="equipment_teleop_node::Equipment_teleop_node" name="equipment_teleop_node"> 
@@ -9,8 +12,6 @@
         <!-- <composable_node pkg="rabbit2023" plugin="equipment_core_node::Equipment_core_node" name="equipment_core_node">  -->
         <!-- </composable_node> -->
 
-        <composable_node pkg="can_plugins2" plugin="slcan_bridge::SlcanBridge" name="slcan_bridge">
-        </composable_node>
 
     </load_composable_node>
 </launch>
