@@ -87,7 +87,7 @@ namespace equipment_teleop_node
 
         std::array<bool, 100> feature_state{};
 
-        void callback(const sensor_msgs::msg::Joy::ConstSharedPtr msg)
+        void callback(const sensor_msgs::msg::Joy::SharedPtr msg)
         {
             rabbit2023::msg::SwitchFeatures command;
             if (button_input_check(msg, button_input_pre, button_map::Y))
